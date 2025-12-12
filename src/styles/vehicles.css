@@ -1,0 +1,196 @@
+
+.vehicles-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.v-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* 2. VEHICLE GRID */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); /* Responsive Grid */
+  gap: 24px;
+}
+
+.vehicle-card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-card);
+  overflow: hidden; /* Clips the image at corners */
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+}
+
+/* Image Area */
+.v-img-container {
+  height: 180px;
+  background: #f9fafb;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.v-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures photo covers area nicely */
+}
+
+/* Floating Status Pills on Image */
+.v-status-pill {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.v-status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-success);
+  border-radius: 50%;
+}
+
+/* Card Content */
+.v-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.v-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.v-model {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.v-plate {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.v-fuel-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #eff6ff;
+  color: #3b82f6;
+}
+
+.v-customer-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border-soft);
+}
+
+.v-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #cbd5e1, #94a3b8);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Info Grid (Last Service / Est) */
+.v-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.v-info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.v-label { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+.v-val { font-size: 0.9rem; font-weight: 700; color: var(--text-main); }
+
+/* Buttons */
+.v-actions {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-call {
+  flex: 1;
+  background: var(--text-main); /* Black button for contrast */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.2s;
+}
+.btn-call:hover { background: #000; transform: translateY(-1px); }
+
+.btn-lock {
+  width: 44px;
+  height: 44px; /* Square icon button */
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  background: white;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.btn-lock:hover { border-color: var(--primary); color: var(--primary); }

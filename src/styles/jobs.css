@@ -1,0 +1,183 @@
+/* src/styles/jobs.css */
+.jobs-layout {
+  height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Area */
+.jobs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.jobs-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.btn-new-job {
+  background: var(--brand);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 99px; /* Pill shape */
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.btn-new-job:hover {
+  transform: translateY(-2px);
+  background: #dc2626;
+}
+
+/* Kanban Board Container */
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Fixed Columns */
+  gap: 20px;
+  overflow-x: auto; /* Scroll horizontally if needed */
+  padding-bottom: 20px;
+  flex: 1;
+}
+
+/* Individual Column */
+.kanban-col {
+  background: #f3f4f6;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 280px;
+}
+
+.col-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.col-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Colored dots for columns */
+.col-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+.col-count {
+  background: #e5e7eb;
+  color: var(--text-main);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Job Card */
+.job-card {
+  background: white;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+  border-color: #e5e7eb;
+}
+
+/* Card Internals */
+.job-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.job-id {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.priority-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.p-high { background: #fef2f2; color: #ef4444; }
+.p-med { background: #eff6ff; color: #3b82f6; }
+
+.job-info h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.job-info p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.job-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px dashed #f3f4f6;
+}
+
+.mechanic-face {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700;
+  color: var(--text-muted);
+  border: 2px solid white;
+}
+
+.job-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .kanban-board {
+    grid-template-columns: repeat(4, 300px); /* Force scroll on smaller screens */
+  }
+}

@@ -1,0 +1,100 @@
+/* src/styles/landing.css */
+.landing-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  font-family: 'Inter', sans-serif;
+}
+
+.landing-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+.landing-sub {
+  font-size: 1.2rem;
+  color: #64748b;
+}
+
+.landing-tag {
+  background: #000;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.role-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.role-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-color: #ef4444;
+}
+
+.role-icon {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.role-card:hover .role-icon {
+  background: #ef4444;
+  color: white;
+}
+
+.role-name { font-size: 1.2rem; font-weight: 800; color: #1e293b; margin-bottom: 8px; }
+.role-desc { font-size: 0.9rem; color: #94a3b8; line-height: 1.5; }
+
+/* Back Button for other views */
+.back-home-btn {
+  position: fixed;
+  bottom: 20px; left: 20px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,188 @@
+/* topnav.css */
+/* ----------------------------------------------------------
+   GLOBAL TOKENS
+----------------------------------------------------------- */
+:root {
+  --sidebar-w: 240px;           
+  --topnav-h: 80px;  /* Slightly taller for elegance */           
+
+  --card: #ffffff;
+  --brand: #ef4444;       
+  --brand-weak: #fee2e2;
+  --bg-app: #f0f2f5;
+
+  --heading: #111827;
+  --muted: #6b7280;
+  --sub: #4b5563;
+
+  --radius: 12px;
+  --shadow-nav: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+/* ----------------------------------------------------------
+   TOP NAV CONTAINER
+----------------------------------------------------------- */
+
+.topnav {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-w);   
+  right: 0;
+  height: var(--topnav-h);
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent */
+  backdrop-filter: blur(12px);           /* Glass effect */
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+
+  display: flex;
+  align-items: center;
+  z-index: 50;
+  transition: all 0.2s ease;
+}
+
+.topnav-inner {
+  width: 100%;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ----------------------------------------------------------
+   LEFT AREA
+----------------------------------------------------------- */
+.topnav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 200px;
+}
+
+/* ----------------------------------------------------------
+   CENTER SEARCH BAR (PRETTY PILL)
+----------------------------------------------------------- */
+
+.topnav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  width: min(480px, 100%);
+  background: #f3f4f6;
+  padding: 10px 18px;
+  border-radius: 99px; /* Pill shape */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* Focus State: Expands slightly + Brand Glow */
+.search-box:focus-within {
+  background: #ffffff;
+  border-color: var(--brand);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.15);
+  transform: scale(1.02);
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 0.95rem;
+  color: var(--heading);
+  font-weight: 500;
+}
+
+.search-box input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.search-icon {
+  color: #9ca3af;
+  transition: 0.2s;
+}
+
+.search-box:focus-within .search-icon {
+  color: var(--brand);
+}
+
+/* ----------------------------------------------------------
+   RIGHT AREA (ICONS)
+----------------------------------------------------------- */
+
+.topnav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 200px;
+  justify-content: flex-end;
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%; /* Circle */
+  cursor: pointer;
+  position: relative;
+  color: var(--sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: #fff;
+  color: var(--brand);
+  border-color: #fee2e2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.notif-dot {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  background: var(--brand);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px; /* Soft square */
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+  transition: transform 0.2s;
+}
+
+.avatar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVE
+----------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .topnav-center { display: none; }
+  .topnav { left: 0; }
+  .topnav-inner { padding: 0 20px; }
+}

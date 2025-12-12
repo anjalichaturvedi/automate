@@ -1,0 +1,142 @@
+/* layout-fix.css — paste & import this as a single source of truth for layout tokens */
+
+/* ---------- tokens ---------- */
+:root{
+  --sidebar-w: 280px;         /* set to your desired default sidebar width */
+  --sidebar-collapsed-w: 72px;
+  --topnav-h: 72px;
+  --page-maxw: 1200px;
+
+  --bg: #F7F7FB;
+  --card: #FFFFFF;
+  --brand: #7752FE;
+  --muted: #8E8E93;
+}
+
+/* ---------- global resets & safety ---------- */
+*{ box-sizing: border-box; }
+html,body,#root { height:100%; margin:0; padding:0; }
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  background: var(--bg);
+  overflow-x: hidden !important; /* prevent accidental horizontal scroll */
+}
+
+/* Apply collapse by toggling .collapsed on root container (.app-container) */
+.app-container { --sidebar-w: var(--sidebar-w); }
+.app-container.collapsed { --sidebar-w: var(--sidebar-collapsed-w); }
+
+/* ---------- sidebar ---------- */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sidebar-w);
+  overflow: auto;
+  z-index: 30;
+  background: var(--card);
+  border-right: 1px solid #EEF0F3;
+}
+
+/* make sidebar children wrap nicely */
+.sidebar * { box-sizing: inherit; }
+
+/* ---------- topnav ---------- */
+.topnav {
+  position: fixed;
+  left: var(--sidebar-w);   /* critical: align with sidebar width */
+  right: 0;
+  top: 0;
+  height: var(--topnav-h);
+  z-index: 40;
+  background: var(--card);
+  border-bottom: 1px solid #EAEAF0;
+  display:flex;
+  align-items:center;
+  padding: 0 18px;
+}
+
+/* ---------- main area ---------- */
+.main-content {
+  margin-left: var(--sidebar-w); 
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* main page container that holds page content */
+.content-area, .mainContainer {
+  max-width: var(--page-maxw);
+  margin: 0 auto;
+  padding: calc(var(--topnav-h) + 18px) 20px 60px; /* push content below topnav */
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* ---------- card & grids safety ---------- */
+/* ensure card backgrounds hide dark gutters */
+.card, .kpi-card, .vehicle-card, .dash-right, .drawerCard {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(12,12,12,0.04);
+  overflow: visible;
+  max-width: 100%;
+}
+
+/* KPI grid: responsive and will wrap rather than overflow */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+/* Dashboard grid: left flexible, right constrained but flexible */
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 360px); /* right column bounded */
+  gap: 20px;
+  align-items: start;
+  width: 100%;
+}
+
+/* Vehicles grid: prevent child from forcing width */
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* smaller min to fit */
+  gap: 12px;
+  width: 100%;
+}
+
+/* Make sure vehicle cards don't force width */
+.vehicle-card { min-width: 0; }
+
+/* timeline column should not be too wide */
+.dash-right { padding: 14px; box-sizing: border-box; }
+
+/* Prevent any inner fixed widths that break layout: remove forced huge widths */
+img, svg { max-width: 100%; height: auto; display:block; }
+
+/* drawer/modal on top */
+.drawer, .modal { z-index: 120 !important; }
+
+/* nice subtle focus ring */
+button:focus, .nav-item:focus, input:focus, .search-box:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(119,82,254,0.12);
+  border-radius: 10px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1100px) {
+  .dash-grid { grid-template-columns: 1fr; }
+  .content-area { padding-left: 14px; padding-right: 14px; }
+}
+@media (max-width: 760px) {
+  .sidebar { display:none; width:0; }
+  .topnav { left: 0; }
+  .main-content { margin-left: 0; }
+  .content-area { padding-top: calc(var(--topnav-h) + 14px); }
+}

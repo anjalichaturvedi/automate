@@ -1,0 +1,170 @@
+/* sidebar.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --sidebar-w: 260px; /* Slightly wider for better breathing room */
+  --bg-sidebar: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  
+  --brand: #ef4444;
+  --brand-gradient: linear-gradient(135deg, #ef4444, #dc2626);
+  --brand-light: #fef2f2;
+  
+  --hover-bg: #f3f4f6;
+  --active-bg: #fef2f2;
+  --active-text: #ef4444;
+  
+  --border-light: #f3f4f6;
+}
+
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  z-index: 50;
+  transition: width 0.3s ease;
+}
+
+/* Collapsed State */
+.sidebar.collapsed { width: 80px; padding: 24px 12px; }
+.sidebar.collapsed .brand-text, 
+.sidebar.collapsed .nav-label,
+.sidebar.collapsed .pro-badge { display: none; }
+.sidebar.collapsed .nav-item { justify-content: center; padding: 12px; }
+
+/* --- Brand Section --- */
+.sidebar-top {
+  margin-bottom: 32px;
+  padding: 0 8px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--brand-gradient);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+  flex-shrink: 0;
+}
+
+.brand-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* --- Navigation --- */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+/* Hover State */
+.nav-item:hover {
+  background: var(--hover-bg);
+  color: var(--text-main);
+}
+
+/* Active State - The "Pill" Look */
+.nav-item.active {
+  background: var(--active-bg);
+  color: var(--active-text);
+  font-weight: 600;
+}
+
+/* Active Indicator Line (Optional, for extra flair) */
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: -16px; /* Positions it on the sidebar edge */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 4px;
+  background: var(--brand);
+  border-radius: 0 4px 4px 0;
+  display: none; /* Hidden by default, enable if you like sidebar edge markers */
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.nav-item:hover .nav-icon {
+  transform: scale(1.1);
+}
+
+.nav-label {
+  white-space: nowrap;
+}
+
+/* --- Sidebar Footer --- */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item.ghost {
+  color: var(--text-muted);
+}
+.nav-item.ghost:hover {
+  background: #fff1f2;
+  color: #ef4444;
+}
+
+/* Responsive Hide */
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.mobile-open { transform: translateX(0); }
+}
