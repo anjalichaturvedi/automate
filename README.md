@@ -1,16 +1,151 @@
-# React + Vite
+# Automate - Predictive Automotive Service
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An autonomous, connected maintenance system that detects vehicle issues early, schedules service proactively, and feeds real-world service insights back to manufacturers to prevent repeat defects.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Problem Statement
 
-## React Compiler
+The automotive service ecosystem is largely reactive.  
+Breakdowns are detected late, servicing is fragmented across channels, and learnings from recurring failures rarely reach manufacturing teams. This results in unplanned downtime, poor customer experience, and repeated defects in vehicle design and components.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Solution Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project builds a **predictive maintenance layer** that connects vehicles, customers, service centers, and OEMs into a single feedback-driven system.
+
+The system:
+- Detects anomalies from vehicle telemetry
+- Scores failure risk using machine learning
+- Proactively schedules service based on urgency and capacity
+- Keeps customers informed throughout the service journey
+- Converts post-service data into structured RCA/CAPA insights for OEMs
+
+Every service event improves future predictions and decisions.
+
+---
+
+## Key Features
+
+- **Real-time vehicle health monitoring**
+- **Predictive fault scoring and time-to-breakdown estimation**
+- **Automated workshop selection and slot booking**
+- **Customer notifications via app and voice**
+- **Service center demand and capacity visibility**
+- **Closed-loop RCA/CAPA feedback to OEMs**
+- **Continuous learning from field data**
+
+---
+
+## System Architecture (High Level)
+
+The system is designed using a layered architecture:
+
+1. **Actors Layer**  
+   Vehicle / IoT device, Vehicle Owner, Service Center, OEM teams
+
+2. **Experience Layer**  
+   React-based dashboards for customers, workshops, and OEM analytics
+
+3. **Access & API Layer**  
+   Authentication, role separation, and API gateway
+
+4. **Orchestration & Business Logic Layer**  
+   Decision-making, scheduling logic, and background workers
+
+5. **Intelligence Layer**  
+   Fault scoring models and AI agents for recommendations and RCA
+
+6. **Data & Storage Layer**  
+   Operational data, service history, and feedback storage
+
+7. **Integration & Notification Layer**  
+   Real-time alerts, reminders, and external integrations
+
+---
+
+## User Journey (Simplified)
+
+1. Vehicle sensor detects an anomaly  
+2. System scores failure risk and urgency  
+3. Recommended service action is generated  
+4. Optimal workshop and slot are selected  
+5. Customer is notified and service is booked  
+6. Vehicle is serviced at workshop  
+7. Post-service data is captured  
+8. RCA/CAPA insights are generated  
+9. Models and rules are updated for future cases
+
+---
+
+## Technology Stack
+
+### Frontend
+- **React.js** – Customer app, Service Center dashboard, OEM analytics
+
+### Backend & APIs
+- **Node.js + Express.js** – Core APIs and orchestration logic
+
+### Data & Storage
+- **PostgreSQL** – Vehicle data, service history, parts, RCA/CAPA records
+
+### Machine Learning & AI
+- **TensorFlow** – Fault scoring and time-to-breakdown prediction
+- **LangChain + OpenAI** – Service recommendations and structured RCA/CAPA extraction
+
+### IoT & Ingestion
+- **AWS IoT Core** – Vehicle telemetry ingestion
+
+### Background Processing
+- **Node.js Workers (Bull/Cron)** – Scheduling, retries, periodic scoring
+
+### Notifications
+- **WebSockets / Push / Voice APIs** – Real-time customer and workshop updates
+
+---
+
+## Impact Metrics
+
+- Reduction in unplanned downtime hours  
+- Faster service turnaround time  
+- Fewer repeat service cases  
+- Improved customer satisfaction scores  
+- Lower warranty claim rates  
+
+---
+
+## Implementation Approach
+
+The solution is designed to integrate with existing vehicle telemetry and service systems using lightweight APIs. It can be piloted with minimal infrastructure changes and scaled incrementally across fleets, workshops, and regions.
+
+---
+
+## Scalability & Extensibility
+
+- Modular service-oriented design
+- Horizontal scaling for ingestion, APIs, and workers
+- New vehicles, workshops, or regions can be added without system redesign
+- Feedback loop continuously improves models and rules
+
+---
+
+## What We Plan to Demonstrate Next
+
+- Live dashboard showing predicted faults and service load
+- End-to-end flow from alert to service booking
+- Real-time customer and workshop notifications
+- RCA/CAPA feedback loop feeding OEM insights
+
+---
+
+## Contributors
+
+- @anjalichaturvedi
+- @vibhuchaudhary 
+
+---
+
+## Vision
+
+To build a connected automotive ecosystem that predicts failures, prevents downtime, and helps every vehicle run smarter and longer.

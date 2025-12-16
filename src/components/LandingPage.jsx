@@ -39,7 +39,7 @@ export default function LandingPage({ onSelect }) {
       </div>
 
       <div style={{ marginTop: 60, display:'flex', gap:8, color:'#94a3b8', fontSize:'0.8rem' }}>
-        <FiCpu /> Powered by GenAI & IoT
+        <FiCpu /> Made by Anjali Chaturvedi and Vibhu Chaudhary
       </div>
 
     </div>
