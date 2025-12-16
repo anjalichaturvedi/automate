@@ -126,6 +126,12 @@ The solution is designed to integrate with existing vehicle telemetry and servic
 - [@vibhuchaudhary](https://github.com/vibhuchaudhary/) 
 
 
-## Vision
+## Ouput
 
-To build a connected automotive ecosystem that predicts failures, prevents downtime, and helps every vehicle run smarter and longer.
+https://github.com/user-attachments/assets/7c6baa6c-efba-4d8c-b288-4e3c8cce1933
+
+https://github.com/user-attachments/assets/f4d02b9d-6f6c-4b55-96ee-34c88743f139
+
+https://github.com/user-attachments/assets/4088422b-c6b9-4dd4-ba19-c252410738d6
+
+
