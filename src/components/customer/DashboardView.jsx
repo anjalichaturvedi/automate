@@ -5,7 +5,7 @@ import {
 } from "react-icons/fi";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import "../../styles/customer.css"; // Ensure this path matches your folder structure
+import "../../styles/customer.css"; 
 
 // Register ChartJS components
 ChartJS.register(ArcElement, Tooltip, Legend);
