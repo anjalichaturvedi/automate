@@ -128,10 +128,19 @@ The solution is designed to integrate with existing vehicle telemetry and servic
 
 ## Ouput
 
-https://github.com/user-attachments/assets/7c6baa6c-efba-4d8c-b288-4e3c8cce1933
 
-https://github.com/user-attachments/assets/f4d02b9d-6f6c-4b55-96ee-34c88743f139
+https://github.com/user-attachments/assets/3c5b5366-d520-477a-acd9-b4c0b276eb17
 
-https://github.com/user-attachments/assets/4088422b-c6b9-4dd4-ba19-c252410738d6
+
+
+
+https://github.com/user-attachments/assets/7b9ac9e3-249f-469a-bd42-8decc0505ed8
+
+
+https://github.com/user-attachments/assets/344e7880-88b6-4ef5-b7ca-72eba8384f99
+
+
+
+
 
 
