@@ -2,14 +2,12 @@
 
 An autonomous, connected maintenance system that detects vehicle issues early, schedules service proactively, and feeds real-world service insights back to manufacturers to prevent repeat defects.
 
----
 
 ## Problem Statement
 
 The automotive service ecosystem is largely reactive.  
 Breakdowns are detected late, servicing is fragmented across channels, and learnings from recurring failures rarely reach manufacturing teams. This results in unplanned downtime, poor customer experience, and repeated defects in vehicle design and components.
 
----
 
 ## Solution Overview
 
@@ -24,7 +22,6 @@ The system:
 
 Every service event improves future predictions and decisions.
 
----
 
 ## Key Features
 
@@ -36,7 +33,6 @@ Every service event improves future predictions and decisions.
 - **Closed-loop RCA/CAPA feedback to OEMs**
 - **Continuous learning from field data**
 
----
 
 ## System Architecture (High Level)
 
@@ -63,7 +59,6 @@ The system is designed using a layered architecture:
 7. **Integration & Notification Layer**  
    Real-time alerts, reminders, and external integrations
 
----
 
 ## User Journey (Simplified)
 
@@ -77,7 +72,6 @@ The system is designed using a layered architecture:
 8. RCA/CAPA insights are generated  
 9. Models and rules are updated for future cases
 
----
 
 ## Technology Stack
 
@@ -103,7 +97,6 @@ The system is designed using a layered architecture:
 ### Notifications
 - **WebSockets / Push / Voice APIs** – Real-time customer and workshop updates
 
----
 
 ## Impact Metrics
 
@@ -113,13 +106,11 @@ The system is designed using a layered architecture:
 - Improved customer satisfaction scores  
 - Lower warranty claim rates  
 
----
 
 ## Implementation Approach
 
 The solution is designed to integrate with existing vehicle telemetry and service systems using lightweight APIs. It can be piloted with minimal infrastructure changes and scaled incrementally across fleets, workshops, and regions.
 
----
 
 ## Scalability & Extensibility
 
@@ -128,23 +119,12 @@ The solution is designed to integrate with existing vehicle telemetry and servic
 - New vehicles, workshops, or regions can be added without system redesign
 - Feedback loop continuously improves models and rules
 
----
-
-## What We Plan to Demonstrate Next
-
-- Live dashboard showing predicted faults and service load
-- End-to-end flow from alert to service booking
-- Real-time customer and workshop notifications
-- RCA/CAPA feedback loop feeding OEM insights
-
----
 
 ## Contributors
 
-- @anjalichaturvedi
-- @vibhuchaudhary 
+- [@anjalichaturvedi](https://github.com/anjalichaturvedi/)
+- [@vibhuchaudhary](https://github.com/vibhuchaudhary/) 
 
----
 
 ## Vision
 
